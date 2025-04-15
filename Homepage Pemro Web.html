@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Pribadi Biodata Diri</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFFFFF;
+    }
+    header {
+      background-color: #040404;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background-color: #333;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+    }
+    nav ul li a:hover {
+      background-color: #575757;
+    }
+    section {
+      display: none;
+      padding: 20px;
+      margin: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    section.active {
+      display: block;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      margin: 10px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .blog-content h3 {
+      color: #5DE2E7;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body onload="showSection('home')">
+  <header><h1>Website Pribadi Biodata Diri</h1></header>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('gallery')">Gallery</a></li>
+      <li><a href="#" onclick="showSection('blog')">Blog</a></li>
+      <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Selamat Datang di Website Saya!</h2>
+    <p>Ini adalah homepage personal saya.</p>
+    <button onclick="showTime()">Lihat Waktu Sekarang</button>
+    <p id="timeDisplay"></p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Kumpulan Foto</h2>
+    <div class="gallery">
+      <img src="https://images.hdqwalls.com/download/internet-technology-hg-3840x2160.jpg" alt="Teknologi masa kini." />
+      <img src="https://th.bing.com/th/id/OIP.zRGSp92tcj-Nd64HA1QjvgHaEo?rs=1&pid=ImgDetMain" alt="Seni digital." />
+      <img src="https://d1bpj0tv6vfxyp.cloudfront.net/6manfaatolahragauntukkesehatanototjantunghalodoc.jpg" alt="Orang berolahraga." />
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="blog-content">
+    <h2>Blog</h2>
+    <h3>Artikel 1: Teknologi Terbaru</h3>
+    <p>Teknologi berkembang pesat. Kita harus selalu update agar tidak tertinggal.</p>
+    <h3>Artikel 2: Seni Digital</h3>
+    <p>Seni digital jadi media penting di era modern. Seniman banyak berkarya lewat alat digital.</p>
+    <h3>Artikel 3: Olahraga dan Kesehatan</h3>
+    <p>Olahraga penting untuk menjaga tubuh tetap sehat dan bugar setiap hari.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Hubungi Saya</h2>
+    <p><strong>Email:</strong> Agungdamopolii1@gmail.com</p>
+    <p><strong>Nomor:</strong> 082344999520</p>
+    <p><strong>Alamat:</strong> Kotobangon, Kota Kotamobagu</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Website Pribadi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => {
+        section.classList.remove("active");
+      });
+      document.getElementById(sectionId).classList.add("active");
+    }
+
+    function showTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString("id-ID");
+      document.getElementById("timeDisplay").textContent = "Waktu sekarang: " + timeString;
+    }
+  </script>
+</body>
+</html>
